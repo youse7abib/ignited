@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GreenFlow Agriculture</title>
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>🌿</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background-shapes" aria-hidden="true">
+      <span class="shape shape-1"></span>
+      <span class="shape shape-2"></span>
+      <span class="shape shape-3"></span>
+    </div>
+
+    <div class="page-shell">
+      <header class="topbar">
+        <a href="#home" class="brand" aria-label="GreenFlow Home">
+          <span class="brand-icon">🌿</span>
+          <span>GreenFlow</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+        <nav class="nav" id="mainNav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="solution.html">Solutions</a>
+          <a href="contact.html">Contact</a>
+          <a href="login.html" class="auth-link">Login</a>
+          <a href="signup.html" class="auth-link signup-link">Sign Up</a>
+        </nav>
+      </header>
+
+      <main>
+        <section id="home" class="hero panel">
+          <img
+            src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=80"
+            alt="Green agricultural fields with river"
+            class="hero-image"
+          />
+          <div class="hero-overlay">
+            <h1>Grow smarter with nature-first agriculture.</h1>
+            <p>
+              Sustainable irrigation, healthy crops, and field analytics that help farms thrive every season.
+            </p>
+            <a href="solution.html" class="cta-btn">Learn More</a>
+          </div>
+        </section>
+
+        <section class="awareness-section panel">
+          <div class="awareness-container">
+            <div class="awareness-card problem-card">
+              <div class="awareness-icon">⚠️</div>
+              <h2>The Problem</h2>
+              <p>
+                Many farmers face critical challenges: unpredictable water availability, soil degradation, 
+                inefficient irrigation methods, and lack of real-time farm data. These issues lead to 
+                reduced crop yields, increased water waste, and higher production costs.
+              </p>
+              <ul>
+                <li>💧 Water scarcity and inefficient irrigation</li>
+                <li>🌍 Climate change impact on crop cycles</li>
+                <li>📊 Lack of data-driven decision making</li>
+                <li>💰 Rising production costs</li>
+              </ul>
+            </div>
+
+            <div class="awareness-card solution-card">
+              <div class="awareness-icon">💡</div>
+              <h2>Our Solution</h2>
+              <p>
+                GreenFlow provides intelligent, data-driven agriculture solutions that help farmers 
+                optimize water usage, increase yields, and reduce costs while protecting the environment.
+              </p>
+              <ul>
+                <li>🤖 AI-powered crop monitoring</li>
+                <li>💧 Smart irrigation optimization</li>
+                <li>📱 Real-time farm analytics dashboard</li>
+                <li>🌱 Sustainable farming practices</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="services-section">
+            <div class="services-grid">
+                <div class="service-card green-border">
+                    <div class="service-icon-circle icon-green-bg">☀️</div>
+                    <h3>Real-Time Farm Monitoring</h3>
+                    <p>Advanced IoT sensors monitor soil moisture, temperature, and humidity 24/7 with instant alerts for critical changes and weather predictions</p>
+                </div>
+                <div class="service-card blue-border">
+                    <div class="service-icon-circle icon-blue-bg">💧</div>
+                    <h3>Smart Irrigation System</h3>
+                    <p>AI-powered automation reduces water waste by up to 40% through intelligent scheduling based on crop needs and weather forecasting</p>
+                </div>
+                <div class="service-card green-border">
+                    <div class="service-icon-circle icon-green-bg">🌿</div>
+                    <h3>Crop Health Analysis</h3>
+                    <p>Advanced image recognition and data analytics detect crop diseases early, identify pest risks, and provide personalized treatment recommendations</p>
+                </div>
+                <div class="service-card blue-border">
+                    <div class="service-icon-circle icon-blue-bg">💨</div>
+                    <h3>Yield Optimization</h3>
+                    <p>Data-driven insights help farmers maximize productivity through precision agriculture, optimal planting strategies, and harvest timing recommendations</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="products-section panel">
+          <div class="section-heading">
+            <h2>Suggested Products</h2>
+            <p>Enhance your farm with our recommended products and equipment</p>
+          </div>
+          <div class="products-grid">
+            <div class="product-card">
+              <div class="product-image">💧</div>
+              <h3>Smart Irrigation Kit</h3>
+              <p class="product-price">$499</p>
+              <p>Automated irrigation system with soil moisture sensors</p>
+              <button class="product-btn">Learn More</button>
+            </div>
+            <div class="product-card">
+              <div class="product-image">📊</div>
+              <h3>Farm Analytics Sensor</h3>
+              <p class="product-price">$199</p>
+              <p>Real-time weather and soil data collection device</p>
+              <button class="product-btn">Learn More</button>
+            </div>
+            <div class="product-card">
+              <div class="product-image">🌱</div>
+              <h3>Organic Soil Enhancer</h3>
+              <p class="product-price">$89</p>
+              <p>Premium organic fertilizer for sustainable farming</p>
+              <button class="product-btn">Learn More</button>
+            </div>
+            <div class="product-card">
+              <div class="product-image">🔧</div>
+              <h3>Irrigation Maintenance Kit</h3>
+              <p class="product-price">$149</p>
+              <p>Complete toolkit for irrigation system maintenance</p>
+              <button class="product-btn">Learn More</button>
+            </div>
+          </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About AquaSmart</h3>
+                    <p>Pioneering smart water management solutions for sustainable agriculture. Helping farmers conserve water, increase productivity, and protect our environment for future generations.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="#solutions">Our Solutions</a>
+                    <a href="#about">About Us</a>
+                    <a href="#team">Our Team</a>
+                    <a href="#contact">Contact Us</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Information</h3>
+                    <p>📍 Smart Village, Egypt</p>
+                    <p>📍 October Office</p>
+                    <p>📞 +20-XXX-XXX-XXXX</p>
+                    <p>📧 info@aquasmart.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 AquaSmart Solutions. All rights reserved. | Sustainable Agriculture Technology</p>
+            </div>
+        </footer>
+  
+
+
+      </main>
+    </div>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot" id="chatbot">
+      <div class="chatbot-header">
+        <h3>🤖 Farm Assistant</h3>
+        <button class="chatbot-close" id="chatbotClose">✕</button>
+      </div>
+      <div class="chatbot-messages" id="chatbotMessages">
+        <div class="chatbot-message bot-message">
+          <p>Hello! I'm your virtual farm assistant. How can I help you today?</p>
+        </div>
+      </div>
+      <div class="chatbot-input-area">
+        <input 
+          type="text" 
+          id="chatbotInput" 
+          placeholder="Ask about crops, irrigation, weather..."
+          class="chatbot-input"
+        />
+        <button class="chatbot-send" id="chatbotSend">↓</button>
+      </div>
+    </div>
+
+    <button class="chatbot-toggle" id="chatbotToggle">💬</button>
+
+    <script src="script.js"></script>
+    <script src="solution.js"></script>
+  </body>
+</html>

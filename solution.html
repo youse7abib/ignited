@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solutions - GreenFlow Agriculture</title>
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>🌿</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="solution.css" />
+  </head>
+  <body>
+    <div class="background-shapes" aria-hidden="true">
+      <span class="shape shape-1"></span>
+      <span class="shape shape-2"></span>
+      <span class="shape shape-3"></span>
+    </div>
+
+    <div class="page-shell">
+      <header class="topbar">
+        <a href="#home" class="brand" aria-label="GreenFlow Home">
+          <span class="brand-icon">🌿</span>
+          <span>GreenFlow</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+        <nav class="nav" id="mainNav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="solution.html">Solutions</a>
+          <a href="contact.html">Contact</a>
+          <a href="login.html" class="auth-link">Login</a>
+          <a href="signup.html" class="auth-link signup-link">Sign Up</a>
+        </nav>
+      </header>
+
+      <main>
+        <section id="farm-calculator" class="solutions panel">
+          <div class="section-heading">
+            <h2>Smart Irrigation Calculator</h2>
+            <p>Calculate the optimal irrigation schedule for your farm</p>
+          </div>
+
+          <div class="calculator-container">
+            <form id="farmCalculator" class="farm-form" action="https://formspree.io/f/xwpovlje" method="post">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="farmSize">Farm Size (Fadan)</label>
+                  <input type="number" id="farmSize" name="farmSize" placeholder="e.g., 10" min="1" required />
+                  <small>1 Fadan ≈ 4200 m²</small>
+                </div>
+                <div class="form-group">
+                  <label for="season">Growing Season</label>
+                  <select id="season" name="season" required>
+                    <option value="">Select Season</option>
+                    <option value="winter">Winter (Nov-Mar)</option>
+                    <option value="summer">Summer (May-Sep)</option>
+                    <option value="spring">Spring (Mar-May)</option>
+                    <option value="fall">Fall (Sep-Nov)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Select Your Crops</label>
+                <div class="crops-selector">
+                  <div class="crop-options">
+                    <div class="crop-item">
+                      <input type="checkbox" id="crop-wheat" name="crops" value="wheat" />
+                      <label for="crop-wheat">🌾 Wheat</label>
+                    </div>
+                    <div class="crop-item">
+                      <input type="checkbox" id="crop-corn" name="crops" value="corn" />
+                      <label for="crop-corn">🌽 Corn</label>
+                    </div>
+                    <div class="crop-item">
+                      <input type="checkbox" id="crop-rice" name="crops" value="rice" />
+                      <label for="crop-rice">🍚 Rice</label>
+                    </div>
+                    <div class="crop-item">
+                      <input type="checkbox" id="crop-tomato" name="crops" value="tomato" />
+                      <label for="crop-tomato">🍅 Tomato</label>
+                    </div>
+                    <div class="crop-item">
+                      <input type="checkbox" id="crop-cucumber" name="crops" value="cucumber" />
+                      <label for="crop-cucumber">🥒 Cucumber</label>
+                    </div>
+                    <div class="crop-item">
+                      <input type="checkbox" id="crop-lettuce" name="crops" value="lettuce" />
+                      <label for="crop-lettuce">🥬 Lettuce</label>
+                    </div>
+                    <div class="crop-item">
+                      <input type="checkbox" id="crop-carrot" name="crops" value="carrot" />
+                      <label for="crop-carrot">🥕 Carrot</label>
+                    </div>
+                    <div class="crop-item">
+                      <input type="checkbox" id="crop-onion" name="crops" value="onion" />
+                      <label for="crop-onion">🧅 Onion</label>
+                    </div>
+                    <div class="crop-item">
+                      <input type="checkbox" id="crop-potato" name="crops" value="potato" />
+                      <label for="crop-potato">🥔 Potato</label>
+                    </div>
+                    <div class="crop-item">
+                      <input type="checkbox" id="crop-bean" name="crops" value="bean" />
+                      <label for="crop-bean">🫘 Bean</label>
+                    </div>
+                    <div class="crop-item">
+                      <input type="checkbox" id="crop-date" name="crops" value="date-palm" />
+                      <label for="crop-date">🌴 Date Palm</label>
+                    </div>
+                    <div class="crop-item">
+                      <input type="checkbox" id="crop-orange" name="crops" value="orange" />
+                      <label for="crop-orange">🍊 Orange</label>
+                    </div>
+                  </div>
+                  <div class="custom-crop">
+                    <input type="text" id="customCrop" placeholder="Add custom crop..." />
+                    <button type="button" id="addCropBtn" class="add-crop-btn">+ Add</button>
+                  </div>
+                  <div id="selectedCrops" class="selected-crops"></div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="plantingTime">Planting Time</label>
+                  <input type="date" id="plantingTime" name="plantingTime" required />
+                </div>
+                <div class="form-group">
+                  <label for="harvestTime">Expected Harvest Time</label>
+                  <input type="date" id="harvestTime" name="harvestTime" required />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="soilType">Soil Type</label>
+                  <select id="soilType" name="soilType" required>
+                    <option value="">Select Soil Type</option>
+                    <option value="sandy">Sandy Soil</option>
+                    <option value="loamy">Loamy Soil</option>
+                    <option value="clay">Clay Soil</option>
+                    <option value="mixed">Mixed Soil</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="waterSource">Water Source</label>
+                  <select id="waterSource" name="waterSource" required>
+                    <option value="">Select Source</option>
+                    <option value="well">Well</option>
+                    <option value="canal">Canal</option>
+                    <option value="river">River</option>
+                    <option value="rainwater">Rainwater</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="waterQuantity">Required Water Quantity (m³/month)</label>
+                <input type="number" id="waterQuantity" name="waterQuantity" placeholder="Will be calculated automatically" readonly />
+                <small id="waterInfo"></small>
+              </div>
+
+              <button type="submit" class="submit-btn">Calculate Irrigation Plan</button>
+            </form>
+          </div>
+        </section>
+
+        <section id="solutions" class="solutions panel">
+          <div class="section-heading">
+            <h2>Subscription Plans</h2>
+            <p>Choose the package that matches your farm size and goals.</p>
+          </div>
+
+          <div class="pricing-grid">
+            <article class="price-card">
+              <h3>Starter</h3>
+              <p class="duration">3 Months</p>
+              <p class="price">$99</p>
+              <ul>
+                <li>✓ 1 field visit / month</li>
+                <li>✓ 2 expert questions / month</li>
+                <li>✓ Basic crop dashboard</li>
+                <li>✓ Irrigation tracking</li>
+              </ul>
+              <button class="subscribe-btn">Subscribe Now</button>
+            </article>
+            <article class="price-card featured">
+              <div class="badge">Most Popular</div>
+              <h3>Premium</h3>
+              <p class="duration">3 Months</p>
+              <p class="price">$169</p>
+              <ul>
+                <li>✓ 2 field visits / month</li>
+                <li>✓ 5 expert questions / month</li>
+                <li>✓ Irrigation performance report</li>
+                <li>✓ Weather integration</li>
+              </ul>
+              <button class="subscribe-btn primary">Subscribe Now</button>
+            </article>
+            <article class="price-card">
+              <h3>Super</h3>
+              <p class="duration">3 Months</p>
+              <p class="price">$229</p>
+              <ul>
+                <li>✓ 4 field visits / month</li>
+                <li>✓ Unlimited expert questions</li>
+                <li>✓ Soil and weather forecasting</li>
+                <li>✓ 24/7 Priority support</li>
+              </ul>
+              <button class="subscribe-btn">Subscribe Now</button>
+            </article>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <div class="footer-content">
+            <div class="footer-column">
+              <h3>About GreenFlow</h3>
+              <p>Pioneering smart agriculture solutions for sustainable farming. Helping farmers conserve water, increase productivity, and protect our environment for future generations.</p>
+            </div>
+            <div class="footer-column">
+              <h3>Quick Links</h3>
+              <a href="index.html">Home</a>
+              <a href="about.html">About Us</a>
+              <a href="solution.html">Solutions</a>
+              <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-column">
+              <h3>Contact Information</h3>
+              <p>📍 Smart Village, Giza, Egypt</p>
+              <p>📍 New Capital Office</p>
+              <p>📞 +20-100-XXXX-XXXX</p>
+              <p>📧 info@greenflow.com</p>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>© 2026 GreenFlow Solutions. All rights reserved. | Sustainable Agriculture Technology</p>
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      // Crop selection and water calculation logic
+      document.getElementById('addCropBtn').addEventListener('click', function() {
+        const customCrop = document.getElementById('customCrop').value;
+        if (customCrop.trim()) {
+          const cropDiv = document.createElement('div');
+          cropDiv.className = 'custom-crop-tag';
+          cropDiv.innerHTML = customCrop + ' <button type="button" onclick="this.parentElement.remove()">×</button>';
+          document.getElementById('selectedCrops').appendChild(cropDiv);
+          document.getElementById('customCrop').value = '';
+        }
+      });
+
+      document.querySelectorAll('input[name="crops"]').forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+          updateSelectedCrops();
+          calculateWaterQuantity();
+        });
+      });
+
+      function updateSelectedCrops() {
+        const selected = document.querySelectorAll('input[name="crops"]:checked');
+        const display = document.getElementById('selectedCrops');
+        display.innerHTML = '';
+        selected.forEach(crop => {
+          const label = document.querySelector('label[for="' + crop.id + '"]').textContent;
+          const tag = document.createElement('div');
+          tag.className = 'selected-crop-tag';
+          tag.innerHTML = label + ' <button type="button" onclick="document.getElementById(\'' + crop.id + '\').click(); updateSelectedCrops(); calculateWaterQuantity();">×</button>';
+          display.appendChild(tag);
+        });
+      }
+
+      function calculateWaterQuantity() {
+        const farmSize = parseFloat(document.getElementById('farmSize').value) || 0;
+        const season = document.getElementById('season').value;
+        const selected = document.querySelectorAll('input[name="crops"]:checked').length;
+
+        if (farmSize && season && selected) {
+          // Basic calculation: varies by season and number of crops
+          const baseWater = farmSize * 4200 * (season === 'summer' ? 0.008 : 0.005);
+          const totalWater = (baseWater * selected * 30).toFixed(2);
+          document.getElementById('waterQuantity').value = totalWater;
+          document.getElementById('waterInfo').textContent = 'Estimated monthly requirement for ' + selected + ' crop(s) in ' + season;
+        }
+      }
+
+      document.getElementById('farmSize').addEventListener('change', calculateWaterQuantity);
+      document.getElementById('season').addEventListener('change', calculateWaterQuantity);
+
+      document.getElementById('farmCalculator').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Irrigation plan calculated! Check your email for detailed recommendations.');
+        if (localStorage.getItem('isLoggedIn')) {
+          // User is logged in, show results
+          window.location.href = 'solution.html#solutions';
+        } else {
+          // Redirect to signup
+          window.location.href = 'signup.html';
+        }
+      });
+    </script>
+    <script src="solution.js"></script>
+  </body>
+</html>

@@ -1,0 +1,394 @@
+:root {
+  --bg: #cde8d8;
+  --panel: rgba(245, 253, 247, 0.82);
+  --primary: #2b8f50;
+  --secondary: #4aa2db;
+  --text: #1f2a26;
+  --muted: #4f5f57;
+  --line: rgba(63, 121, 82, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #c6f3e2 0%, #bde0cb 45%, #dcebd7 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.background-shapes .shape {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(4px);
+  z-index: -1;
+}
+
+.shape-1 {
+  width: 520px;
+  height: 520px;
+  background: rgba(90, 180, 132, 0.25);
+  top: -120px;
+  left: -100px;
+}
+
+.shape-2 {
+  width: 420px;
+  height: 420px;
+  background: rgba(114, 175, 227, 0.25);
+  right: -80px;
+  top: -60px;
+}
+
+.shape-3 {
+  width: 500px;
+  height: 500px;
+  background: rgba(146, 209, 146, 0.3);
+  bottom: -160px;
+  right: -120px;
+}
+
+.page-shell {
+  width: min(1200px, calc(100% - 2rem));
+  margin: 2rem auto;
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 26px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 30px 70px rgba(26, 74, 47, 0.18);
+  padding: 1.25rem;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+}
+
+.brand {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-icon {
+  font-size: 1.4rem;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
+  color: #234434;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.35rem 0.6rem;
+  border-radius: 99px;
+}
+
+.nav a:hover {
+  background: rgba(101, 172, 130, 0.2);
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: rgba(97, 143, 117, 0.2);
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+  font-size: 1rem;
+}
+
+.panel {
+  border-radius: 22px;
+  margin: 1rem 0;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  min-height: 260px;
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: 22px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: auto 50% 1rem auto;
+  transform: translateX(50%);
+  width: min(90%, 520px);
+  background: rgba(245, 255, 244, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 12px 24px rgba(31, 59, 45, 0.24);
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  color: #25533e;
+}
+
+.hero p {
+  margin: 0.6rem 0 1rem;
+  color: #2d5e47;
+  font-size: 0.95rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(120deg, #2b8f50, #3f8fd6);
+  border-radius: 999px;
+  padding: 0.55rem 1.1rem;
+  font-weight: 600;
+}
+
+.gradient-panel {
+  background: linear-gradient(140deg, rgba(120, 198, 115, 0.48), rgba(91, 177, 221, 0.42));
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  padding: 1.3rem;
+}
+
+.about {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1.15fr 1fr;
+}
+
+
+
+.about-card,
+.feature-card,
+.price-card,
+.team-card,
+.contact-form {
+  background: rgba(248, 255, 251, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 10px 26px rgba(43, 75, 54, 0.12);
+}
+
+.about-card {
+  padding: 1rem 1.2rem;
+}
+
+.about-card h2 {
+  margin-top: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #2f6a46;
+}
+
+.feature-grid {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.feature-card {
+  padding: 0.85rem 1rem;
+}
+
+.feature-card h3 {
+  margin: 0;
+  color: #2d6e8c;
+}
+
+.feature-card p {
+  margin: 0.35rem 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.section-heading {
+  margin-bottom: 1rem;
+}
+
+
+.section-heading h2 {
+  margin: 0;
+  color: #26523d;
+}
+
+.section-heading p {
+  margin: 0.4rem 0 0;
+  color: #3f5d4f;
+}
+
+.solutions {
+  padding: 1rem;
+  border: 1px solid var(--line);
+  background: rgba(235, 248, 240, 0.85);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.price-card {
+  padding: 1rem;
+  border: 2px solid rgba(80, 142, 106, 0.26);
+}
+
+.price-card h3 {
+  margin: 0;
+}
+
+.duration {
+  font-size: 0.85rem;
+  color: #2f6a46;
+  font-weight: 600;
+}
+
+.price {
+  margin: 0.35rem 0;
+  font-size: 1.5rem;
+  color: #1d6e9f;
+  font-weight: 700;
+}
+
+.price-card ul {
+  margin: 0.7rem 0 1rem;
+  padding-left: 1.15rem;
+  color: #364f42;
+  font-size: 0.9rem;
+}
+
+.price-card button,
+.contact-form button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(110deg, var(--primary), var(--secondary));
+}
+
+.team {
+  padding: 1rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.team-card {
+  padding: 0.5rem;
+}
+
+.team-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.team-card h3 {
+  margin: 0.55rem 0 0.2rem;
+}
+
+.team-card p {
+  margin: 0 0 0.4rem;
+  color: #4e6559;
+  font-size: 0.9rem;
+}
+
+.contact {
+  padding: 1rem;
+  background: rgba(230, 245, 236, 0.85);
+  border: 1px solid var(--line);
+}
+
+.contact-form {
+  padding: 1rem;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 0.3rem;
+  font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: 1px solid rgba(84, 128, 98, 0.4);
+  border-radius: 10px;
+  padding: 0.65rem;
+  font: inherit;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+#formStatus {
+  min-height: 1.2rem;
+  margin: 0;
+  color: #276a4d;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 920px) {
+  .about,
+  .pricing-grid,
+  .team-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    right: 1.25rem;
+    top: 4.2rem;
+    background: rgba(244, 255, 246, 0.96);
+    border-radius: 12px;
+    border: 1px solid rgba(122, 158, 130, 0.35);
+    flex-direction: column;
+    padding: 0.5rem;
+    box-shadow: 0 15px 25px rgba(26, 60, 44, 0.2);
+    display: none;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .about,
+  .pricing-grid,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-overlay {
+    inset: auto 50% 0.8rem auto;
+  }
+}

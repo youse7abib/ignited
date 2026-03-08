@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - GreenFlow Agriculture</title>
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>🌿</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body>
+    <div class="background-shapes" aria-hidden="true">
+      <span class="shape shape-1"></span>
+      <span class="shape shape-2"></span>
+      <span class="shape shape-3"></span>
+    </div>
+
+    <div class="auth-container">
+      <div class="auth-box">
+        <div class="auth-header">
+          <span class="brand-icon">🌿</span>
+          <h1>GreenFlow</h1>
+          <p>Smart Agriculture Solutions</p>
+        </div>
+
+        <form class="auth-form" id="loginForm">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              placeholder="you@example.com"
+              required 
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input 
+              type="password" 
+              id="password" 
+              name="password" 
+              placeholder="Enter your password"
+              required 
+            />
+          </div>
+
+          <div class="form-options">
+            <label class="remember-me">
+              <input type="checkbox" name="remember" />
+              Remember me
+            </label>
+            <a href="#" class="forgot-password">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="auth-btn">Login</button>
+
+          <div class="auth-divider">
+            <span>OR</span>
+          </div>
+
+          <button type="button" class="social-btn google-btn">
+            <span>🔍</span> Login with Google
+          </button>
+        </form>
+
+        <div class="auth-footer">
+          <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+        </div>
+      </div>
+
+      <div class="auth-side-image">
+        <img 
+          src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80" 
+          alt="Green farm fields"
+        />
+        <div class="image-overlay">
+          <h2>Grow Smarter</h2>
+          <p>Join thousands of farmers using smart irrigation solutions</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        localStorage.setItem('userEmail', email);
+        localStorage.setItem('isLoggedIn', 'true');
+        window.location.href = 'solution.html';
+      });
+
+      document.querySelector('.google-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        localStorage.setItem('isLoggedIn', 'true');
+        window.location.href = 'solution.html';
+      });
+    </script>
+  </body>
+</html>
