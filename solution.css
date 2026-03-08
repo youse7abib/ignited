@@ -293,6 +293,35 @@ background: rgba(101, 172, 130, 0.2);
   gap: 0.9rem;
 }
 
+@media (max-width: 1200px) {
+  .pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+  }
+
+  .price-card {
+    padding: 0.9rem;
+  }
+}
+
+@media (max-width: 920px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .price-card {
+    padding: 1.2rem;
+  }
+}
+
 .price-card {
   padding: 1rem;
   border: 2px solid rgba(80, 142, 106, 0.26);
@@ -411,11 +440,42 @@ background: rgba(101, 172, 130, 0.2);
   box-shadow: 0 10px 30px rgba(26, 74, 47, 0.1);
 }
 
+@media (max-width: 1200px) {
+  .farm-form {
+    padding: 1.8rem;
+  }
+}
+
+@media (max-width: 920px) {
+  .farm-form {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .farm-form {
+    padding: 1.2rem;
+  }
+}
+
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   margin-bottom: 1.5rem;
+}
+
+@media (max-width: 920px) {
+  .form-row {
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 .form-group {
@@ -464,10 +524,43 @@ background: rgba(101, 172, 130, 0.2);
   border: 2px dashed rgba(43, 143, 80, 0.4);
 }
 
+@media (max-width: 920px) {
+  .crops-selector {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .crops-selector {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  #farmSize {
+    width: 100%;
+  }
+}
+
 .crop-options {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   gap: 1rem;
+}
+
+@media (max-width: 920px) {
+  .crop-options {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .crop-options {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 0.6rem;
+  }
+}
   margin-bottom: 1.5rem;
 }
 
@@ -512,6 +605,13 @@ background: rgba(101, 172, 130, 0.2);
   margin-bottom: 1rem;
 }
 
+@media (max-width: 680px) {
+  .custom-crop {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+}
+
 .custom-crop input {
   flex: 1;
   padding: 0.7rem;
@@ -528,6 +628,15 @@ background: rgba(101, 172, 130, 0.2);
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+@media (max-width: 680px) {
+  .add-crop-btn {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
 }
 
 .add-crop-btn:hover {
@@ -540,6 +649,20 @@ background: rgba(101, 172, 130, 0.2);
   flex-wrap: wrap;
   gap: 0.8rem;
 }
+
+@media (max-width: 920px) {
+  .selected-crops {
+    gap: 0.6rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .selected-crops {
+    gap: 0.5rem;
+  }
+}
+
+
 
 .selected-crop-tag,
 .custom-crop-tag {
@@ -554,6 +677,14 @@ background: rgba(101, 172, 130, 0.2);
   font-weight: 500;
 }
 
+@media (max-width: 680px) {
+  .selected-crop-tag,
+  .custom-crop-tag {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
 .selected-crop-tag button,
 .custom-crop-tag button {
   background: none;
@@ -565,19 +696,36 @@ background: rgba(101, 172, 130, 0.2);
 }
 
 .submit-btn {
-            background: linear-gradient(135deg, #2b8f50 0%, #24a359 100%);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 1.5rem;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #2b8f50 0%, #24a359 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 920px) {
+  .submit-btn {
+    padding: 0.9rem 1.5rem;
+    font-size: 0.95rem;
+    margin-top: 1.2rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .submit-btn {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+  }
+}
 
 .submit-btn:hover {
   transform: translateY(-2px);
@@ -598,6 +746,18 @@ background: rgba(101, 172, 130, 0.2);
   border: 2px solid rgba(43, 143, 80, 0.15);
   position: relative;
   transition: all 0.3s ease;
+}
+
+@media (max-width: 920px) {
+  .price-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .price-card {
+    padding: 1.2rem;
+  }
 }
 
 .price-card:hover {
@@ -636,6 +796,18 @@ background: rgba(101, 172, 130, 0.2);
   font-size: 1.5rem;
 }
 
+@media (max-width: 920px) {
+  .price-card h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .price-card h3 {
+    font-size: 1.1rem;
+  }
+}
+
 .price-card .price {
   font-size: 2.8rem;
   color: var(--secondary);
@@ -643,11 +815,29 @@ background: rgba(101, 172, 130, 0.2);
   margin: 1rem 0;
 }
 
+@media (max-width: 920px) {
+  .price-card .price {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .price-card .price {
+    font-size: 2rem;
+  }
+}
+
 .price-card .duration {
   color: var(--muted);
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+}
+
+@media (max-width: 680px) {
+  .price-card .duration {
+    font-size: 0.8rem;
+  }
 }
 
 .price-card ul {
@@ -667,6 +857,20 @@ background: rgba(101, 172, 130, 0.2);
   gap: 0.5rem;
 }
 
+@media (max-width: 920px) {
+  .price-card li {
+    padding: 0.6rem 0;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .price-card li {
+    padding: 0.5rem 0;
+    font-size: 0.85rem;
+  }
+}
+
 .subscribe-btn {
   width: 100%;
   padding: 1rem;
@@ -681,6 +885,22 @@ background: rgba(101, 172, 130, 0.2);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-size: 0.9rem;
+}
+
+@media (max-width: 920px) {
+  .subscribe-btn {
+    padding: 0.8rem 0.6rem;
+    margin-top: 1.2rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .subscribe-btn {
+    padding: 0.7rem 0.5rem;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+  }
 }
 
 .subscribe-btn:hover {
@@ -993,5 +1213,4 @@ background: rgba(101, 172, 130, 0.2);
     font-size: 0.8rem;
     margin: 0.5rem 0 0.8rem;
   }
-}
 }
